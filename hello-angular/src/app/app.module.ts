@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
+import{ FormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { TodosComponent } from './components/todos/todos.component';
+/*this is where things get declared : this is TypeScript (more sctrict-explicit JS)
+New components automatically go here- use CLI to create new components
+*/
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
