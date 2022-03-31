@@ -17,21 +17,7 @@ export class TodosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.todos = [
-      {
-        content: 'First todo',
-        completed: false
-      },
-      {
-        content: 'Second',
-        completed: false
-      },
-      {
-        content: 'Third',
-        completed: false
-      }
-
-    ]
+    this.todos = []
   }
 
   //inferring type - (strict: id has to be a number (utilizing TS))
