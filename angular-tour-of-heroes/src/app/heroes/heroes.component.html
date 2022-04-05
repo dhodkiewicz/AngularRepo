@@ -1,12 +1,11 @@
 <h2>My Heroes</h2>
 <ul class="heroes">
-    <li *ngFor="let hero of heroes"> <!--This allows us to loop through list of heroes-->
-        <button [class.selected]="hero === selectedHero" type ="button" (click) ="onSelect(hero)">
-            <span class="badge">{{hero.id}}</span>
-            <span class="name">{{hero.name}}</span>
-        </button>
-    </li>
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+  </li>
 </ul>
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail> <!--is Angular property binding this is the child element
-this represents one-way data binding-->
+<!--<app-hero-detail [hero]="selectedHero"></app-hero-detail> <!--is Angular property binding this is the child element -->
+<!--this represents one-way data binding-->
