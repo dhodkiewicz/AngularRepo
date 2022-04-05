@@ -3,6 +3,7 @@ import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
 import { Observable, of } from 'rxjs' // implements import of Observable and 'of' symbols- for use with simulating data from a server w/ of()
 import { MessageService } from './message.service'; // implements our message servace
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 /*
 The @Injectable() decorator accepts a metadata object for the service, 
@@ -33,7 +34,14 @@ export class HeroService {
   /*
   This is a typical "service-in-service" scenario: you inject the MessageService into the HeroService which is injected into the HeroesComponent.
   */
-  constructor(private messageService: MessageService) { }
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService) { }
+
+    /** Log a HeroService message with the MessageService */
+private log(message: string) {
+  this.messageService.add(`HeroService: ${message}`);
+}
 
   //method to return a list of mock heroes but in a way which simulates getting from a server
   getHeroes(): Observable<Hero[]> {
