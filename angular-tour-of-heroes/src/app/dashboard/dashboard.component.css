@@ -4,6 +4,16 @@ h2 {
     text-align: center;
   }
   
+  .special{
+    color:black;
+  }
+
+  cdk-virtual-scroll-viewport{
+    color: black;
+    height: 500px;
+  }
+
+
   .heroes-menu {
     padding: 0;
     margin: auto;
