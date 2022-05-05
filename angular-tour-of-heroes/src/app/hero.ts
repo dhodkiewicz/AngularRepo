@@ -1,4 +1,7 @@
+import { idText } from "typescript"
+
 export interface Hero{
-    id: number;
-    name: string;
+    _id: number,
+    _name: string,
+    _saying: string
 }
